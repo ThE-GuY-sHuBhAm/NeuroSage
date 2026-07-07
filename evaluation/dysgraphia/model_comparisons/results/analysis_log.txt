@@ -1,0 +1,68 @@
+2026-04-05 20:20:42 | INFO | Output directory : paper_plots\run_20260405_202042
+2026-04-05 20:20:42 | INFO | Log file         : paper_plots\run_20260405_202042\analysis_log.txt
+2026-04-05 20:20:42 | INFO | Found 4 experiment(s): ['results_efficientnet_b0.csv', 'results_mobilenet_v3.csv', 'results_resnet18.csv', 'results_resnet34.csv']
+2026-04-05 20:20:42 | INFO | Expected dysgraphia samples per file: 35
+2026-04-05 20:20:42 | INFO | 
+--- Pass 1: Scoring all backbones ---
+2026-04-05 20:20:42 | INFO | 
+Analysing: efficientnet_b0
+2026-04-05 20:20:42 | INFO |   [efficientnet_b0] Sample count OK: 35 dysgraphia / 120 normal.
+2026-04-05 20:20:42 | INFO |   Using per-sample 'inference_time_ms' column from CSV.
+2026-04-05 20:20:42 | INFO |   [efficientnet_b0] AUC=0.9969 | Threshold=72.4099 | F1=0.9211 | Sens=1.0000 | Spec=0.9500 | Lat=15.598ms±6.372 | Analysis time=17.2ms
+2026-04-05 20:20:42 | INFO | 
+Analysing: mobilenet_v3
+2026-04-05 20:20:42 | INFO |   [mobilenet_v3] Sample count OK: 35 dysgraphia / 120 normal.
+2026-04-05 20:20:42 | INFO |   Using per-sample 'inference_time_ms' column from CSV.
+2026-04-05 20:20:42 | INFO |   [mobilenet_v3] AUC=1.0000 | Threshold=52.1448 | F1=1.0000 | Sens=1.0000 | Spec=1.0000 | Lat=11.475ms±7.900 | Analysis time=5.3ms
+2026-04-05 20:20:42 | INFO | 
+Analysing: resnet18
+2026-04-05 20:20:42 | INFO |   [resnet18] Sample count OK: 35 dysgraphia / 120 normal.
+2026-04-05 20:20:42 | INFO |   Using per-sample 'inference_time_ms' column from CSV.
+2026-04-05 20:20:42 | INFO |   [resnet18] AUC=0.9962 | Threshold=28.0542 | F1=0.9859 | Sens=1.0000 | Spec=0.9917 | Lat=10.530ms±63.099 | Analysis time=6.1ms
+2026-04-05 20:20:42 | INFO | 
+Analysing: resnet34
+2026-04-05 20:20:42 | INFO |   [resnet34] Sample count OK: 35 dysgraphia / 120 normal.
+2026-04-05 20:20:42 | INFO |   Using per-sample 'inference_time_ms' column from CSV.
+2026-04-05 20:20:42 | INFO |   [resnet34] AUC=0.9998 | Threshold=29.1645 | F1=0.9859 | Sens=1.0000 | Spec=0.9917 | Lat=8.427ms±1.222 | Analysis time=5.7ms
+2026-04-05 20:20:42 | INFO | 
+[+] Saved comparison table: paper_plots\run_20260405_202042\model_comparison_table.csv
+2026-04-05 20:20:42 | INFO | 
+--- Leaderboard (Image Only, sorted by AUC) ---
+2026-04-05 20:20:42 | INFO | 
+ Rank           Model      AUC  Threshold  Sensitivity (Recall)  Specificity  Precision  F1 Score  Latency_mean_ms  Latency_total_ms
+    1    mobilenet_v3 1.000000  52.144849                   1.0     1.000000   1.000000  1.000000          11.4752         1778.6573
+    2        resnet34 0.999762  29.164523                   1.0     0.991667   0.972222  0.985915           8.4273         1306.2244
+    3 efficientnet_b0 0.996905  72.409943                   1.0     0.950000   0.853659  0.921053          15.5978         2417.6553
+    4        resnet18 0.996190  28.054231                   1.0     0.991667   0.972222  0.985915          10.5304         1632.2149
+2026-04-05 20:20:42 | INFO | 
+*** WINNER: mobilenet_v3 (AUC = 1.0000) ***
+
+2026-04-05 20:20:42 | INFO | ============================================================
+2026-04-05 20:20:42 | INFO |   WINNING MODEL: mobilenet_v3
+2026-04-05 20:20:42 | INFO | ============================================================
+2026-04-05 20:20:42 | INFO |   AUC              : 1.0000
+2026-04-05 20:20:42 | INFO |   Optimal Threshold: 52.1448
+2026-04-05 20:20:42 | INFO |   Accuracy         : 1.0000
+2026-04-05 20:20:42 | INFO |   Sensitivity      : 1.0000
+2026-04-05 20:20:42 | INFO |   Specificity      : 1.0000
+2026-04-05 20:20:42 | INFO |   Precision        : 1.0000
+2026-04-05 20:20:42 | INFO |   F1 Score         : 1.0000
+2026-04-05 20:20:42 | INFO |   False Positive Rate: 0.0000
+2026-04-05 20:20:42 | INFO |   TP=35  TN=120  FP=0  FN=0
+2026-04-05 20:20:42 | INFO | 
+2026-04-05 20:20:42 | INFO |   Latency (mean)   : 11.4752 ms/sample
+2026-04-05 20:20:42 | INFO |   Latency (std)    : 7.9004 ms
+2026-04-05 20:20:42 | INFO |   Latency (total)  : 1778.6573 ms
+2026-04-05 20:20:42 | INFO | ============================================================
+2026-04-05 20:20:43 | INFO | [+] Saved backbone comparison ROC: paper_plots\run_20260405_202042\backbone_comparison_roc.png
+2026-04-05 20:20:43 | INFO | 
+--- Pass 2: Detailed plots for winner (mobilenet_v3) ---
+2026-04-05 20:20:43 | INFO |   [mobilenet_v3] Sample count OK: 35 dysgraphia / 120 normal.
+2026-04-05 20:20:43 | INFO |   Using per-sample 'inference_time_ms' column from CSV.
+2026-04-05 20:20:43 | INFO |   [mobilenet_v3] AUC=1.0000 | Threshold=52.1448 | F1=1.0000 | Sens=1.0000 | Spec=1.0000 | Lat=11.475ms±7.900 | Analysis time=11.9ms
+2026-04-05 20:20:43 | INFO | 
+>> Generating detailed plots for WINNER: mobilenet_v3...
+2026-04-05 20:20:44 | INFO |   Saved: best_model_histogram.png, best_model_roc.png, best_model_confusion_matrix.png
+2026-04-05 20:20:44 | INFO | 
+[✓] All outputs saved to: paper_plots\run_20260405_202042
+2026-04-05 20:20:44 | INFO | [✓] Full log saved to   : paper_plots\run_20260405_202042\analysis_log.txt

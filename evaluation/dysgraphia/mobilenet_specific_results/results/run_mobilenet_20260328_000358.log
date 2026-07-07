@@ -1,0 +1,127 @@
+2026-03-28 00:03:58,573 [INFO] ============================================================
+2026-03-28 00:03:58,574 [INFO]   DYSGRAPHIA SCREENER -- EVALUATION (MobileNet V3)
+2026-03-28 00:03:58,574 [INFO]   Weighted Combo Sweep with auto threshold optimisation
+2026-03-28 00:03:58,574 [INFO]   IMAGE_THRESHOLD=52.1448493  BORDER_LOW=43.45  BORDER_HIGH=57.94
+2026-03-28 00:03:58,574 [INFO]   Run started: 2026-03-28 00:03:58
+2026-03-28 00:03:58,575 [INFO] ============================================================
+2026-03-28 00:03:59,804 [INFO] Device: cuda:0
+2026-03-28 00:04:00,543 [INFO] Loading weights from checkpoints\mobilenet_v3_model_best.pth ...
+2026-03-28 00:04:00,633 [INFO] Model loaded.
+2026-03-28 00:04:00,637 [INFO] Baseline loaded, shape=torch.Size([576])
+2026-03-28 00:04:00,638 [INFO] 
+Collecting images ...
+2026-03-28 00:04:00,638 [INFO]   35 images in 'dysgraphia_samples' -> Atypical
+2026-03-28 00:04:00,653 [INFO]   120 images in 'IAM\testset' -> Typical
+2026-03-28 00:04:00,653 [INFO] Total: 155 images
+2026-03-28 00:04:00,653 [INFO] 
+Phase 1: Inference + grounded Q simulation ...
+2026-03-28 00:04:02,692 [INFO]   20/155 processed ...
+2026-03-28 00:04:04,085 [INFO]   40/155 processed ...
+2026-03-28 00:04:06,310 [INFO]   60/155 processed ...
+2026-03-28 00:04:08,795 [INFO]   80/155 processed ...
+2026-03-28 00:04:11,448 [INFO]   100/155 processed ...
+2026-03-28 00:04:14,114 [INFO]   120/155 processed ...
+2026-03-28 00:04:16,916 [INFO]   140/155 processed ...
+2026-03-28 00:04:18,638 [INFO]   155/155 processed ...
+2026-03-28 00:04:18,651 [INFO] 
+Phase 2: Computing image-only baseline ...
+2026-03-28 00:04:18,672 [INFO] 
+----------------------------------------------------
+  IMAGE-ONLY BASELINE (threshold=52.1448493)
+----------------------------------------------------
+2026-03-28 00:04:18,672 [INFO]   accuracy                  1.0000
+2026-03-28 00:04:18,672 [INFO]   balanced_accuracy         1.0000
+2026-03-28 00:04:18,672 [INFO]   precision                 1.0000
+2026-03-28 00:04:18,673 [INFO]   recall                    1.0000
+2026-03-28 00:04:18,673 [INFO]   specificity               1.0000
+2026-03-28 00:04:18,673 [INFO]   f1                        1.0000
+2026-03-28 00:04:18,673 [INFO]   mcc                       1.0000
+2026-03-28 00:04:18,673 [INFO]   kappa                     1.0000
+2026-03-28 00:04:18,673 [INFO]   auc_roc                   1.0000
+2026-03-28 00:04:18,674 [INFO]   auc_pr                    1.0000
+2026-03-28 00:04:18,674 [INFO]   tp                        35
+2026-03-28 00:04:18,674 [INFO]   tn                        120
+2026-03-28 00:04:18,674 [INFO]   fp                        0
+2026-03-28 00:04:18,674 [INFO]   fn                        0
+2026-03-28 00:04:18,674 [INFO]   n_total                   155
+2026-03-28 00:04:18,674 [INFO]   n_positive                35
+2026-03-28 00:04:18,675 [INFO]   n_negative                120
+2026-03-28 00:04:18,675 [INFO] ----------------------------------------------------
+2026-03-28 00:04:18,675 [INFO] 
+Phase 3: Weight sweep ...
+2026-03-28 00:04:18,960 [INFO]   w_I=0.00 w_Q=1.00 | thresh=7.50 | FN= 0  Recall=1.000  F1=0.368  FP=120
+2026-03-28 00:04:19,239 [INFO]   w_I=0.05 w_Q=0.95 | thresh=8.73 | FN= 0  Recall=1.000  F1=0.378  FP=115
+2026-03-28 00:04:19,516 [INFO]   w_I=0.10 w_Q=0.90 | thresh=12.70 | FN= 0  Recall=1.000  F1=0.398  FP=106
+2026-03-28 00:04:19,800 [INFO]   w_I=0.15 w_Q=0.85 | thresh=15.19 | FN= 0  Recall=1.000  F1=0.429  FP=93
+2026-03-28 00:04:20,082 [INFO]   w_I=0.20 w_Q=0.80 | thresh=18.04 | FN= 0  Recall=1.000  F1=0.483  FP=75
+2026-03-28 00:04:20,364 [INFO]   w_I=0.25 w_Q=0.75 | thresh=20.83 | FN= 0  Recall=1.000  F1=0.526  FP=63
+2026-03-28 00:04:20,649 [INFO]   w_I=0.30 w_Q=0.70 | thresh=23.54 | FN= 0  Recall=1.000  F1=0.642  FP=39
+2026-03-28 00:04:20,946 [INFO]   w_I=0.35 w_Q=0.65 | thresh=25.52 | FN= 0  Recall=1.000  F1=0.707  FP=29
+2026-03-28 00:04:21,231 [INFO]   w_I=0.40 w_Q=0.60 | thresh=27.46 | FN= 0  Recall=1.000  F1=0.761  FP=22
+2026-03-28 00:04:21,513 [INFO]   w_I=0.45 w_Q=0.55 | thresh=31.42 | FN= 0  Recall=1.000  F1=0.805  FP=17
+2026-03-28 00:04:21,811 [INFO]   w_I=0.50 w_Q=0.50 | thresh=31.52 | FN= 0  Recall=1.000  F1=0.805  FP=17
+2026-03-28 00:04:22,088 [INFO]   w_I=0.55 w_Q=0.45 | thresh=32.30 | FN= 0  Recall=1.000  F1=0.805  FP=17
+2026-03-28 00:04:22,371 [INFO]   w_I=0.60 w_Q=0.40 | thresh=33.06 | FN= 0  Recall=1.000  F1=0.805  FP=17
+2026-03-28 00:04:22,653 [INFO]   w_I=0.65 w_Q=0.35 | thresh=42.30 | FN= 0  Recall=1.000  F1=0.921  FP= 6
+2026-03-28 00:04:22,938 [INFO]   w_I=0.70 w_Q=0.30 | thresh=44.21 | FN= 0  Recall=1.000  F1=0.972  FP= 2
+2026-03-28 00:04:23,238 [INFO]   w_I=0.75 w_Q=0.25 | thresh=44.13 | FN= 0  Recall=1.000  F1=0.986  FP= 1
+2026-03-28 00:04:23,521 [INFO]   w_I=0.80 w_Q=0.20 | thresh=45.68 | FN= 0  Recall=1.000  F1=1.000  FP= 0
+2026-03-28 00:04:23,809 [INFO]   w_I=0.85 w_Q=0.15 | thresh=42.92 | FN= 0  Recall=1.000  F1=1.000  FP= 0
+2026-03-28 00:04:24,085 [INFO]   w_I=0.90 w_Q=0.10 | thresh=40.10 | FN= 0  Recall=1.000  F1=1.000  FP= 0
+2026-03-28 00:04:24,364 [INFO]   w_I=0.95 w_Q=0.05 | thresh=39.23 | FN= 0  Recall=1.000  F1=1.000  FP= 0
+2026-03-28 00:04:24,688 [INFO]   w_I=1.00 w_Q=0.00 | thresh=39.97 | FN= 0  Recall=1.000  F1=1.000  FP= 0
+2026-03-28 00:04:24,703 [INFO] 
+============================================================
+2026-03-28 00:04:24,703 [INFO]   BEST COMBO: w_I=0.80  w_Q=0.20  threshold=45.68
+2026-03-28 00:04:24,707 [INFO]   FN=0  Recall=1.0000  F1=1.0000
+2026-03-28 00:04:24,707 [INFO] ============================================================
+2026-03-28 00:04:24,727 [INFO] 
+----------------------------------------------------
+  BEST COMBO (w_I=0.8, w_Q=0.2)
+----------------------------------------------------
+2026-03-28 00:04:24,728 [INFO]   accuracy                  1.0000
+2026-03-28 00:04:24,728 [INFO]   balanced_accuracy         1.0000
+2026-03-28 00:04:24,728 [INFO]   precision                 1.0000
+2026-03-28 00:04:24,728 [INFO]   recall                    1.0000
+2026-03-28 00:04:24,729 [INFO]   specificity               1.0000
+2026-03-28 00:04:24,729 [INFO]   f1                        1.0000
+2026-03-28 00:04:24,730 [INFO]   mcc                       1.0000
+2026-03-28 00:04:24,730 [INFO]   kappa                     1.0000
+2026-03-28 00:04:24,730 [INFO]   auc_roc                   1.0000
+2026-03-28 00:04:24,730 [INFO]   auc_pr                    1.0000
+2026-03-28 00:04:24,730 [INFO]   tp                        35
+2026-03-28 00:04:24,730 [INFO]   tn                        120
+2026-03-28 00:04:24,731 [INFO]   fp                        0
+2026-03-28 00:04:24,731 [INFO]   fn                        0
+2026-03-28 00:04:24,731 [INFO]   n_total                   155
+2026-03-28 00:04:24,731 [INFO]   n_positive                35
+2026-03-28 00:04:24,732 [INFO]   n_negative                120
+2026-03-28 00:04:24,732 [INFO] ----------------------------------------------------
+2026-03-28 00:04:24,757 [INFO] 
+Evaluation log saved: evaluation_results_mobilenet\evaluation_log_mobilenet.csv
+2026-03-28 00:04:24,761 [INFO] Sweep results saved: evaluation_results_mobilenet\weight_sweep_results.csv
+2026-03-28 00:04:24,768 [INFO] Summary JSON saved: evaluation_results_mobilenet\weight_sweep_results.json
+2026-03-28 00:04:24,769 [INFO] 
+Generating plots ...
+2026-03-28 00:04:25,183 [INFO] Saved: evaluation_results_mobilenet/weight_sweep_fn_heatmap.png
+2026-03-28 00:04:25,508 [INFO] Saved: evaluation_results_mobilenet/weight_sweep_recall_heatmap.png
+2026-03-28 00:04:25,859 [INFO] Saved: evaluation_results_mobilenet/weight_sweep_f1_heatmap.png
+2026-03-28 00:04:26,257 [INFO] Saved: evaluation_results_mobilenet/weight_sweep_all_metrics.png
+2026-03-28 00:04:26,958 [INFO] Saved: evaluation_results_mobilenet/weight_sweep_ranking.png
+2026-03-28 00:04:27,550 [INFO] Saved: evaluation_results_mobilenet/comparison_image_vs_best.png
+2026-03-28 00:04:27,721 [INFO] Saved: evaluation_results_mobilenet/image_only_confusion_matrix.png
+2026-03-28 00:04:27,902 [INFO] Saved: evaluation_results_mobilenet/best_combo_confusion_matrix.png
+2026-03-28 00:04:28,074 [INFO] Saved: evaluation_results_mobilenet/image_only_roc_curve.png
+2026-03-28 00:04:28,243 [INFO] Saved: evaluation_results_mobilenet/best_combo_roc_curve.png
+2026-03-28 00:04:28,405 [INFO] Saved: evaluation_results_mobilenet/image_only_pr_curve.png
+2026-03-28 00:04:28,558 [INFO] Saved: evaluation_results_mobilenet/best_combo_pr_curve.png
+2026-03-28 00:04:28,881 [INFO] Saved: evaluation_results_mobilenet/image_only_score_distribution.png
+2026-03-28 00:04:29,203 [INFO] Saved: evaluation_results_mobilenet/best_combo_score_distribution.png
+2026-03-28 00:04:29,624 [INFO] Saved: evaluation_results_mobilenet/bucket_breakdown.png
+2026-03-28 00:04:29,851 [INFO] Saved: evaluation_results_mobilenet/edge_case_analysis.png
+2026-03-28 00:04:29,851 [INFO] 
+============================================================
+2026-03-28 00:04:29,851 [INFO]   Done in 31.3s  |  Results: evaluation_results_mobilenet
+2026-03-28 00:04:29,851 [INFO]   Best combo : w_I=0.80  w_Q=0.20  FN=0  Recall=1.0000  F1=1.0000
+2026-03-28 00:04:29,851 [INFO]   Image-only : FN=0  Recall=1.0000  F1=1.0000
+2026-03-28 00:04:29,851 [INFO] ============================================================
