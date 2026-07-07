@@ -1,0 +1,21 @@
+# ============================================================
+# Dysgraphia Screener Backend - Python Dependencies
+# ============================================================
+# To install with GPU (CUDA 11.8) support, use this command:
+# pip install -r requirements.txt --index-url https://download.pytorch.org/whl/cu118
+#
+# To install for CPU only, remove the "+cu118" tags from torch and torchvision lines.
+# ============================================================
+
+Flask==3.1.2
+flask-cors==6.0.1
+torch==2.7.1+cu118
+torchvision==0.22.1+cu118
+Pillow==11.3.0
+python-dotenv==1.0.0
+google-generativeai==0.8.3
+vit-pytorch==1.15.2
+einops==0.8.1
+torchsummary==1.5.1
+requests==2.32.3
+openpyxl==3.1.5
