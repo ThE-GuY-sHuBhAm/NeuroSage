@@ -1,0 +1,31 @@
+# params.yaml
+data:
+  target_sr: 16000
+  window_sec: 4.0
+  stride_sec: 2.0
+  min_rms: 0.001        
+
+augment:
+  pitch_steps_low: 4.0
+  pitch_steps_high: 8.0
+
+model:
+  wavlm_name: "microsoft/wavlm-large"
+  acoustic_dim: 256
+  lpe_dim: 32
+  hidden_dim: 128
+  dropout: 0.3
+
+train:
+  batch_size_stage1: 16
+  batch_size_stage2: 16
+  epochs_stage1: 20
+  epochs_stage2: 30
+  lr_wavlm_stage1: 0.00001
+  lr_wavlm_stage2: 0.000002
+  lr_heads_stage1: 0.0001
+  lr_heads_stage2: 0.00005
+  pos_weight_sld: 3.0
+  pos_weight_sld_stage2: 0.25   # neg/pos = 706/2841
+  pos_weight_od: 2.0
+
