@@ -1,0 +1,25 @@
+# requirements_api.txt — Speech Disfluency Detection API
+# -------------------------------------------------------
+# CPU-only PyTorch keeps the image ~4GB smaller than CUDA.
+
+# Web framework
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.9
+pydantic==2.7.4
+
+# ML — CPU PyTorch
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.3.0+cpu
+transformers==4.44.2
+numpy==1.26.4
+
+# Audio
+librosa==0.10.2
+soundfile==0.12.1
+
+# Utilities
+pyyaml==6.0.2
+python-dotenv==1.0.1
+google-generativeai==0.8.3
+groq>=0.9.0
