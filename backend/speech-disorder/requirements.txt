@@ -10,7 +10,7 @@ pydantic==2.7.4
 
 # ML — CPU PyTorch
 --extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.4.0+cpu
+torch==2.13.0+cpu
 transformers==4.44.2
 numpy==1.26.4
 
